@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:playroom/feature/main/home/presentation/home_page.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+  final Widget child;
+  const MainPage({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: HomePage(),
+        child: child,
       ),
     );
   }

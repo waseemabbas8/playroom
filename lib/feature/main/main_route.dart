@@ -2,12 +2,8 @@ import 'package:go_router/go_router.dart';
 
 import 'main_page.dart';
 
-const String mainPath = '/main';
-
-class MainRoute extends GoRoute {
-  MainRoute()
-      : super(
-          path: mainPath,
-          builder: (context, state) => const MainPage(),
-        );
+class MainRoute extends StatefulShellRoute {
+  MainRoute({
+    required super.branches,
+  }) : super.indexedStack(builder: (context, state, child) => MainPage(child: child));
 }
